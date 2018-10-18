@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+    website:
+        build:
+            context: .
+        command: yarn dev
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/usr/src/app
+            
+networks:
+    default:
+        external:
+            name: nginx-proxy-example
